@@ -102,4 +102,7 @@ addLayer("completions", {
     },
     row: 2,
     layerShown() {return true},
+      upgrades: {
+
+    },
 })
