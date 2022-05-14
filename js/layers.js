@@ -33,20 +33,20 @@ addLayer("L", {
     
     },
     12: {    title: "Comments",
-    description: "add commenting to levels, making levels boost point gain",
-    cost: new Decimal(2),
-    effect() {
-        return player[this.layer].points.add(1).pow(0.5)
+       description: "add commenting to levels, making levels boost point gain",
+       cost: new Decimal(2),
+       effect() {
+           return player[this.layer].points.add(1).pow(0.5)
     },
-    effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+    effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" },
     },
     13: {    title: "Level verification",
-    description: "levels need to be verified now, making points boost level gain for some reason",
-    cost: new Decimal(5),
-    effect() {
+       description: "levels need to be verified now, making points boost level gain for some reason",
+       cost: new Decimal(5),
+       effect() {
         return player.points.add(1).pow(0.15)
     },
-    effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+       effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" },
     }},
     layerShown(){return true}
 })
