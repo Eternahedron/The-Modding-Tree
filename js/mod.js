@@ -45,6 +45,7 @@ function getPointGen() {
 	let gain = new Decimal(1)
         if (hasUpgrade('L', 11)) gain = gain.times(2)
         if (hasUpgrade('L', 12)) gain = gain.times(upgradeEffect('L', 12))
+		if (hasUpgrade('L', 14)) gain = gain.times(upgradeEffect('L', 14))
 	return gain
 }
 

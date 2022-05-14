@@ -13,8 +13,9 @@ addLayer("L", {
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.6, // Prestige currency exponent
-    gainMult() { // Calculate the multiplier for main currency from bonuses
-        mult = new Decimal(1)
+        gainMult() {
+        let mult = new Decimal(1)
+        if (hasUpgrade('L', 13)) mult = mult.times(upgradeEffect('L', 13))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -36,6 +37,14 @@ addLayer("L", {
     cost: new Decimal(2),
     effect() {
         return player[this.layer].points.add(1).pow(0.5)
+    },
+    effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+    },
+    13: {    title: "Level verification",
+    description: "levels need to be verified now, making points boost level gain for some reason",
+    cost: new Decimal(5),
+    effect() {
+        return player.points.add(1).pow(0.15)
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
     }},
