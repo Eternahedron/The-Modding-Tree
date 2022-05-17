@@ -428,3 +428,6 @@ var interval = setInterval(function() {
 }, 50)
 
 setInterval(function() {needCanvasUpdate = true}, 500)
+
+var updatebase = 2
+if (hasUpgrade('L',23)) var updatebase = 3

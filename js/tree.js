@@ -3,7 +3,9 @@ var layoutInfo = {
     startNavTab: "tree-tab",
 	showTree: true,
 
-    treeLayout: ""
+    treeLayout: [["L"],
+                ["C"]]
+ 
 
     
 }
@@ -11,8 +13,9 @@ var layoutInfo = {
 
 // A "ghost" layer which offsets other layers in the tree
 addNode("blank", {
-    layerShown: "ghost",
+    layerShown: "true",
 }, 
+{}
 )
 
 
@@ -21,3 +24,4 @@ addLayer("tree-tab", {
     previousTab: "",
     leftTab: true,
 })
+
