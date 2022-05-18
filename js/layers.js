@@ -108,9 +108,11 @@ passiveGeneration() {
            if (hasMilestone('C',1)) lvlpersec=0.1
            return lvlpersec;
            },
-           doReset() {
+           doReset(ResettingLayer) {
     var keep = []
     if (hasMilestone("C", 2)) keep.push("upgrades")
+    if (ResettingLayer = "L") keep.push("points")
+    
     layerDataReset(this.layer, keep)
 },
 
@@ -319,7 +321,7 @@ addLayer("E", {
         return new Decimal(1)
     },
     row: 2,
-    layerShown() {return true}
+    layerShown() {return (hasUpgrade('C', 16) )}
  
     
 })
