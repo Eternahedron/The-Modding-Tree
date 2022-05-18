@@ -13,16 +13,22 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.01",
-	name: "Personalize stuff",
+	num: "0.02",
+	name: "3 Layers",
 }
 
-let changelog = `<h1>Changelog:</h1><br>
-	<h3>v0.0</h3><br>
-		- Added things.<br>
-		- Added stuff.`
+let changelog = `<h1>Changelog:</h1><br><br>
+    <h3>v0.02</h3><br>
+	    -Added the basis for a new static row 2 layer.<br><br>
 
-let winText = `GG on beating the hardest thing possible in the current version! But there is no end to difficulty, not until we live.`
+    <h3>v0.01</h3><br>
+	    -Added gameplay with 2 layers up until about e160 points.<br><br>
+
+	<h3>v0.0</h3><br>
+		- And the code fell, ready for change. <br>`
+		
+
+let winText = `Welcome to the endgame as of this update. Congrats on coming so far.`
 
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
 // (The ones here are examples, all official functions are already taken care of)
@@ -66,7 +72,7 @@ var displayThings = [
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.points.gte(new Decimal("e280000000"))
+	return player.points.gte(new Decimal("e160"))
 }
 
 

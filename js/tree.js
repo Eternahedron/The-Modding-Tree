@@ -4,7 +4,9 @@ var layoutInfo = {
 	showTree: true,
 
     treeLayout: [["L"],
-                ["C"]]
+                ["C","E"]],
+    branches: [["L"],
+               ["C","E"]]
  
 
     
@@ -14,9 +16,8 @@ var layoutInfo = {
 // A "ghost" layer which offsets other layers in the tree
 addNode("blank", {
     layerShown: "true",
-}, 
-{}
-)
+})
+
 
 
 addLayer("tree-tab", {

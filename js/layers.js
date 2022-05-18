@@ -204,7 +204,7 @@ passiveGeneration() {
     }
     },
     layerShown(){return true}
-}),
+})
 addLayer("C", {
     name: "Completions",
     symbol: "C",
@@ -292,7 +292,7 @@ addLayer("C", {
 
     
     }
-}),
+})
 addLayer("E", {
     name: "Levels Built",
     symbol: "E",
@@ -302,12 +302,12 @@ addLayer("E", {
         points: new Decimal(0),
     }},
     color: "#6AFF4D",
-    requires: 400,
-    resource: "levels beaten",
+    requires: 1000,
+    resource: "levels uploaded",
     baseResource: "L",
     baseAmount() {return player.L.points},
     type: "static",
-    exponent: 2,
+    exponent: 3,
     gainMult() {
         mult = new Decimal(1)
         return mult
@@ -319,7 +319,7 @@ addLayer("E", {
         return new Decimal(1)
     },
     row: 2,
-    layerShown() {if (hasUpgrade('C', 16) || player[layer].unlocked ) return true}
+    layerShown() {return true}
  
     
 })
