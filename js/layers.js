@@ -111,9 +111,9 @@ passiveGeneration() {
            doReset(ResettingLayer) {
     var keep = []
     if (hasMilestone("C", 2)) keep.push("upgrades")
-    if (ResettingLayer = "L") keep.push("points")
+    if (ResettingLayer !== "L") layerDataReset(this.layer, keep)
     
-    layerDataReset(this.layer, keep)
+    
 },
 
        
